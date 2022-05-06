@@ -1,5 +1,4 @@
 const modals = () => {
-  
   function bindModal(
     openSelector,
     modalSelector,
@@ -27,10 +26,12 @@ const modals = () => {
       // document.body.classList.remove("modal-open");
     });
 
-    modal.addEventListener("click", () => {
-      modal.style.display = "none";
-      document.body.style.overflow = "";
-      // document.body.classList.remove("modal-open");
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "";
+        // document.body.classList.remove("modal-open");
+      }
     });
   }
 
@@ -53,7 +54,7 @@ const modals = () => {
     ".popup",
     ".popup_dialog .popup_close"
   );
-  // showModalByTime(".popup", 60000);
+  showModalByTime(".popup", 60000);
 };
 
 export default modals;

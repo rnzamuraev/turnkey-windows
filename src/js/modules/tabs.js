@@ -41,15 +41,22 @@ const tabs = (
           tabsSelector.replace(/\./, "")
         )
       ) {
-        for (let i = 0; i < tabs.length; i++) {
-          if (
-            target == tabs[i] ||
-            target.parentNode == tabs[i]
-          ) {
+        // for (let i = 0; i < tabs.length; i++) {
+        //   if (
+        //     target == tabs[i] ||
+        //     target.parentNode == tabs[i]
+        //   ) {
+        //     fadeTabContent();
+        //     showTabContent(i);
+        //   }
+        // }
+        ////// Идентично записи выше(for)
+        tabs.forEach((tab, i) => {
+          if (target == tab || target.parentNode == tab) {
             fadeTabContent();
             showTabContent(i);
           }
-        }
+        });
       }
     }
   });
