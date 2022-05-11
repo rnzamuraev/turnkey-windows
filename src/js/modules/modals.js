@@ -1,3 +1,5 @@
+import closeAllModalWindow from "./closeAllModalWindow.js";
+
 const modals = () => {
   function bindModal(
     openSelector,
@@ -7,14 +9,7 @@ const modals = () => {
   ) {
     const open = document.querySelectorAll(openSelector),
       modal = document.querySelector(modalSelector),
-      close = document.querySelector(closeSelector),
-      window = document.querySelectorAll("[data-modal]");
-
-    const closeAllModalWindow = () => {
-      window.forEach((item) => {
-        item.style.display = "none";
-      });
-    };
+      close = document.querySelector(closeSelector);
 
     open.forEach((item) => {
       item.addEventListener("click", (event) => {

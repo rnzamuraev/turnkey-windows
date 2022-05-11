@@ -4,6 +4,7 @@ import tabs from "./modules/tabs.js";
 import forms from "./modules/forms.js";
 import changeModalState from "./modules/changeModalState.js";
 import timer from "./modules/timer.js";
+import popapImages from "./modules/popapImages.js";
 
 window.addEventListener("DOMContentLoaded", function () {
   "use strict";
@@ -11,7 +12,6 @@ window.addEventListener("DOMContentLoaded", function () {
   let modalState = {};
   const deadline = "2022-05-15";
 
-  timer("#timer", deadline);
   changeModalState(modalState);
   modals();
   tabs(
@@ -34,4 +34,6 @@ window.addEventListener("DOMContentLoaded", function () {
     "inline-block"
   );
   forms(modalState);
+  timer("#timer", deadline);
+  popapImages();
 });

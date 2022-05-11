@@ -1,4 +1,4 @@
-import checkNumInputs from "./checkNumInputs.js";
+import checkNumInputs from "./checkNumInputs";
 
 const forms = (state) => {
   const forms = document.querySelectorAll("form"),

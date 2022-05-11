@@ -749,14 +749,16 @@ textarea:focus {
 }
 
 .container1 {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 .numbers1 {
-  display: block;
-  float: left;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   color: white;
   font-size: 40px;
-  margin-right: 10px;
 }
 
 .timer1 span {
@@ -1728,8 +1730,14 @@ textarea:focus {
     line-height: 1.4;
   }
 
-  .sale .eTimer {
-    font-size: 1rem;
+  .timer1 {
+    text-align: center;
+    width: 290px;
+  }
+
+  .description1 {
+    font-size: 15px;
+    text-align: center;
   }
 
   .contacts {
