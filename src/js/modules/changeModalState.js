@@ -1,7 +1,6 @@
 import checkNumInputs from "./checkNumInputs";
 
 const changeModalState = (state) => {
-
   checkNumInputs("#width");
   checkNumInputs("#height");
 

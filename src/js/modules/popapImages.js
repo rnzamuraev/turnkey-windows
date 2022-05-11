@@ -1,18 +1,20 @@
 import closeAllModalWindow from "./closeAllModalWindow.js";
+import calcScroll from "./calcScroll.js";
 
 const popapImages = () => {
   const imgPopap = document.createElement("div"),
     bigImg = document.createElement("img"),
-    worksImages = document.querySelector(".works");
+    worksImages = document.querySelector(".works"),
+    scroll = calcScroll();
 
-  document.body.append(imgPopap);
-  imgPopap.append(bigImg);
+  document.body.appendChild(imgPopap);
+  imgPopap.appendChild(bigImg);
   imgPopap.classList.add("popup");
   imgPopap.setAttribute("data-modal", "");
   imgPopap.style.justifyContent = "center";
   imgPopap.style.alignItems = "center";
-  // bigImg.style.width = 80 + "%";
-  bigImg.style.height = 90 + "%";
+  bigImg.style.maxWidth = 90 + "%";
+  bigImg.style.maxHeight = 90 + "%";
 
   worksImages.addEventListener("click", (event) => {
     const target = event.target;
@@ -21,7 +23,7 @@ const popapImages = () => {
       event.preventDefault();
       imgPopap.style.display = "flex";
       document.body.style.overflow = "hidden";
-      // document.body.style.paddingRight = 17 + "px";
+      document.body.style.paddingRight = `${scroll}px`;
       const path = target.parentNode.getAttribute("href");
       bigImg.setAttribute("src", path);
     }
@@ -31,8 +33,8 @@ const popapImages = () => {
     if (target && target === imgPopap) {
       imgPopap.style.display = "none";
       document.body.style.overflow = "";
+      document.body.style.paddingRight = `0px`;
       closeAllModalWindow();
-      // document.body.style.paddingRight = 0 + "px";
     }
   });
 };

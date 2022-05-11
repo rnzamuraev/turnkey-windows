@@ -18,6 +18,20 @@ body {
   color: red;
 }
 
+.faded {
+  animation-name: faded;
+  animation-duration: 1s;
+}
+
+@keyframes faded {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 a:hover {
   text-decoration: none;
 }
@@ -746,6 +760,9 @@ textarea:focus {
   text-align: center;
   width: 360px;
   height: 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .container1 {
@@ -755,18 +772,19 @@ textarea:focus {
 }
 .numbers1 {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   color: white;
   font-size: 40px;
 }
 
 .timer1 span {
-  margin-right: 2px;
+  /* margin-right: 2px; */
   background-color: #575757;
   border-radius: 7px;
   padding: 4px;
 }
+
 .description1 {
   font-size: 18px;
   text-align: center;
@@ -1342,6 +1360,12 @@ textarea:focus {
     background-size: cover;
   }
 
+  .timer1 {
+    padding: 0 30px;
+    margin: 0 auto;
+    width: 400px;
+  }
+
   .sale_title {
     margin-bottom: 3rem;
     text-align: center;
@@ -1731,6 +1755,7 @@ textarea:focus {
   }
 
   .timer1 {
+    padding: 0;
     text-align: center;
     width: 290px;
   }

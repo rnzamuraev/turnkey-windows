@@ -1,6 +1,9 @@
 import closeAllModalWindow from "./closeAllModalWindow.js";
+import calcScroll from "./calcScroll.js";
 
 const modals = () => {
+  const scroll = calcScroll();
+
   function bindModal(
     openSelector,
     modalSelector,
@@ -19,6 +22,7 @@ const modals = () => {
           modal.style.display = "block";
           document.body.style.overflow = "hidden";
           // document.body.classList.add("modal-open");
+          document.body.style.paddingRight = `${scroll}px`;
         }
       });
     });
@@ -27,6 +31,7 @@ const modals = () => {
       closeAllModalWindow();
       document.body.style.overflow = "";
       // document.body.classList.remove("modal-open");
+      document.body.style.paddingRight = `0px`;
     });
 
     modal.addEventListener("click", (event) => {
@@ -34,16 +39,17 @@ const modals = () => {
         closeAllModalWindow();
         document.body.style.overflow = "";
         // document.body.classList.remove("modal-open");
+        document.body.style.paddingRight = `0px`;
       }
     });
   }
 
   function showModalByTime(selector, time) {
-    ///// function
     setTimeout(function () {
       document.querySelector(selector).style.display =
         "block";
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scroll}px`;
     }, time);
   }
 
